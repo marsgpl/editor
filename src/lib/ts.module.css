@@ -1,0 +1,44 @@
+.Keyword {
+    color: #C678DD;
+}
+
+.Bracket {
+    color: #ffd602;
+}
+
+.Operator,
+.BasicType,
+.RegExp {
+    color: #56b6c2;
+}
+
+.Identifier {
+    color: #e06c75;
+}
+
+.Comment {
+    color: #5c6370;
+    font-style: italic;
+}
+
+.String,
+.TypeStart {
+    color: #98c379;
+}
+
+.Function {
+    color: #61afef;
+}
+
+.Constant {
+    color: #d19a66;
+}
+
+.Type {
+    color: #e5c07b;
+}
+
+.Forbidden {
+    background: red;
+    color: white;
+}

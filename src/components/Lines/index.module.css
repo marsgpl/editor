@@ -1,0 +1,21 @@
+.Lines {
+    width: 70px;
+    min-height: 100%;
+    float: left;
+    box-sizing: border-box;
+    padding: 0 19px 0 15px;
+    cursor: default;
+    user-select: none;
+    overflow: hidden;
+    text-align: right;
+    font: 400 15px / 23px monospace;
+    color: #636d83;
+}
+
+.Lines div {
+    height: 23px;
+}
+
+.Lines div.Active {
+    color: #abb2bf;
+}

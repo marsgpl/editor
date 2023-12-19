@@ -1,0 +1,42 @@
+.Content {
+    margin-left: 70px;
+    width: calc(100% - 70px);
+    min-height: 100%;
+    overflow-x: auto;
+    overflow-y: visible;
+    position: relative;
+}
+
+.Code {
+    display: inline-block;
+    user-select: none;
+    cursor: default;
+    color: #abb2bf;
+    min-width: 100%;
+    margin-right: 40px;
+    margin-bottom: calc(100% - 8px);
+}
+
+.Text {
+    all: unset;
+    display: block;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    -webkit-text-fill-color: transparent;
+    user-select: text;
+    cursor: text;
+    box-sizing: content-box;
+    padding-right: 40px;
+    padding-bottom: calc(100% - 8px);
+}
+
+.Code,
+.Text {
+    font: 400 15px / 23px monospace;
+    white-space: pre;
+    word-break: keep-all;
+}
