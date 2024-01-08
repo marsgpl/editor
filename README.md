@@ -8,6 +8,9 @@ npm ci
 npm start
 ```
 
-## TODO
+## Release
 
-- better way of checking for obj: value !== null && typeof value === 'object'
+```sh
+npm run release
+# then upload dst folder to sandbox.innervate.com
+```

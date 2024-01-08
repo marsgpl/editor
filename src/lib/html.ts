@@ -1,77 +1,24 @@
-import { escapeForRegExp } from './regexp'
-import type { KV } from './types'
+import { escapeForRegexp } from './regexp'
 
-export const HTML_SPECIAL_CHARS: KV = {
+const NEWLINE = '\n'
+export const BR = '<br />'
+
+export const HTML_RESERVED: Record<string, string> = {
     '&': '&amp;',
     '<': '&lt;',
     '>': '&gt;',
-    '\n': '<br />',
+    '"': '&quot;',
+    '\'': '&apos;',
+    [NEWLINE]: BR,
 }
 
-export const HTML_SPECIAL_CHARS_REGEXP = new RegExp(
-    Object.keys(HTML_SPECIAL_CHARS)
-        .map(escapeForRegExp)
-        .join('|'),
-    'gm')
-
-export function span(text: string, className?: string) {
-    const leftLen = text.match(/^[\s\n]+/)?.[0]?.length || 0
-    const rightLen = text.match(/[\s\n]+$/)?.[0]?.length || 0
-    const visible = (leftLen + rightLen) < text.length
-
-    if (!visible) {
-        return escapeNewLines(text)
-    }
-
-    if (!className) {
-        return escapeForHtml(text)
-    }
-
-    let html = ''
-
-    if (leftLen) {
-        html += escapeNewLines(text.substring(0, leftLen))
-    }
-
-    html += `<span class="${className}">${
-        escapeForHtml(text.substring(leftLen, rightLen ? text.length - rightLen : undefined))
-    }</span>`
-
-    if (rightLen) {
-        html += escapeNewLines(text.substring(text.length - rightLen))
-    }
-
-    return html
-}
-
-export function escapeNewLines(text: string) {
-    return text.replace(/\n/g, '<br />')
-}
+const REGEXP = new RegExp(Object.keys(HTML_RESERVED).map(escapeForRegexp).join('|'), 'g')
+const REGEXP_NEWLINE = new RegExp(NEWLINE, 'g')
 
 export function escapeForHtml(text: string): string {
-    if (!text) { return '' }
+    return text.replace(REGEXP, char => HTML_RESERVED[char] || char)
+}
 
-    let escaped = ''
-    let pos = 0
-
-    for (const match of text.matchAll(HTML_SPECIAL_CHARS_REGEXP)) {
-        const char = match[0]
-        const charPos = match.index
-
-        if (charPos === undefined) { continue }
-
-        if (charPos > pos) {
-            escaped += text.substring(pos, charPos)
-        }
-
-        escaped += (HTML_SPECIAL_CHARS[char] || '')
-
-        pos = charPos + 1
-    }
-
-    if (text.length > pos) {
-        escaped += text.substring(pos, text.length)
-    }
-
-    return escaped
+export function escapeForHtmlOnlyNewline(text: string): string {
+    return text.replace(REGEXP_NEWLINE, BR)
 }

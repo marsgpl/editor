@@ -1,14 +1,14 @@
-const path = require('path')
+const { resolve } = require('node:path')
 
 module.exports = {
     mode: 'development',
     entry: './src/index.tsx',
     output: {
-        filename: 'a.js',
-        path: path.resolve('dst'),
+        filename: 'index.js',
+        path: resolve(__dirname, 'dst'),
     },
     resolve: {
-        extensions: ['.tsx', '.ts', '.js'],
+        extensions: ['.tsx', '.ts', '.js', '.jsx'],
     },
     module: {
         noParse: [
@@ -16,7 +16,7 @@ module.exports = {
         ],
         rules: [
             {
-                test: /\.tsx?$/,
+                test: /\.[jt]sx?$/,
                 use: 'ts-loader',
                 exclude: /node_modules/,
             },

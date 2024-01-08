@@ -1,0 +1,29 @@
+.Button {
+    all: unset;
+    display: block;
+    cursor: pointer;
+    box-sizing: border-box;
+    font: var(--font-ui);
+    --c1: #b81ad1;
+    --c2: #3096ff;
+    --x: 100%;
+    background: linear-gradient(
+        90deg,
+        var(--c2, #f6d365),
+        var(--c1, #fda085) 49%,
+        var(--c1, #f6d365)
+    ) var(--x, 0) /200%;
+    color: #fff;
+    transition: .5s;
+    border-radius: 8px;
+    padding: 6px 24px;
+}
+
+.Button:hover {
+    --x: 0%;
+}
+
+.Red {
+    --c1: rgb(219, 54, 54);
+    --c2: rgb(236, 100, 100);
+}

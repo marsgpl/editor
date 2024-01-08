@@ -1,7 +1,6 @@
-import React from 'react'
 import s from './index.module.css'
 
-export const LINE_HEIGHT = 23
+const MAX_LINE_N = 99999
 
 export interface LinesProps {
     linesN: number
@@ -14,11 +13,11 @@ export function Lines({
 }: LinesProps) {
     return (
         <div className={s.Lines}>
-            {Array.from(Array(Math.round(linesN) || 1), (_, index) => (
+            {Array.from(Array(linesN), (_, index) => (
                 <div
                     key={index}
                     className={index === activeLineIndex ? s.Active : undefined}
-                >{Math.min(9999, index + 1)}</div>
+                >{Math.min(MAX_LINE_N, index + 1)}</div>
             ))}
         </div>
     )

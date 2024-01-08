@@ -1,0 +1,14 @@
+.Actions {
+    height: 60px;
+    background: rgba(0, 0, 0, .2);
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.Actions > span {
+    flex-grow: 1;
+    min-width: 12px;
+}

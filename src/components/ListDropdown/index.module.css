@@ -1,0 +1,19 @@
+.Select {
+    all: unset;
+    display: block;
+    cursor: pointer;
+    box-sizing: border-box;
+    font: var(--font-ui);
+    border-radius: 8px;
+    padding: 6px 24px;
+    background: #292c33;
+    text-align: center;
+}
+
+.Select:disabled {
+    opacity: .5;
+}
+
+.Waiting {
+    cursor: wait;
+}

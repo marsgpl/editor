@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "license": "UNLICENSED",
   "scripts": {
-    "start": "webpack serve"
+    "start": "webpack serve",
+    "release": "webpack --config webpack.config.release.js && cp public/favicon.ico dst && cp public/index.release.html dst/inex.html"
   },
   "devDependencies": {
     "@types/react-dom": "^18.2.18",
     "css-loader": "^6.8.1",
+    "css-minimizer-webpack-plugin": "^5.0.1",
+    "mini-css-extract-plugin": "^2.7.6",
     "style-loader": "^3.3.3",
     "ts-loader": "^9.5.1",
     "typescript-plugin-css-modules": "^5.0.2",

@@ -1,9 +1,32 @@
-.Keyword {
-    color: #C678DD;
+.Fatal {
+    background: red;
+    color: white;
+}
+
+.Type {
+    color: #e5c07b;
 }
 
 .Bracket {
     color: #ffd602;
+}
+
+.Constant,
+.Number,
+.JSXAttribute {
+    color: #d19a66;
+}
+
+.Property {
+    color: #e06c75;
+}
+
+.Keyword {
+    color: #C678DD;
+}
+
+.Function {
+    color: #74adea;
 }
 
 .Operator,
@@ -12,33 +35,12 @@
     color: #56b6c2;
 }
 
-.Identifier {
-    color: #e06c75;
+.TypeName,
+.String {
+    color: #a1c281;
 }
 
 .Comment {
     color: #5c6370;
     font-style: italic;
-}
-
-.String,
-.TypeStart {
-    color: #98c379;
-}
-
-.Function {
-    color: #61afef;
-}
-
-.Constant {
-    color: #d19a66;
-}
-
-.Type {
-    color: #e5c07b;
-}
-
-.Forbidden {
-    background: red;
-    color: white;
 }

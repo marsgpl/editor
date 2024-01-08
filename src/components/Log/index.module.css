@@ -1,0 +1,12 @@
+.Log {
+    font: var(--font-code);
+    user-select: text;
+    flex-grow: 1;
+    cursor: text;
+    padding: 8px 12px;
+    min-width: 200px;
+    overflow: auto;
+    box-sizing: border-box;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
