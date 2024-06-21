@@ -4,7 +4,7 @@ Interviewing sandbox
 
 ## Live demo
 
-[https://mchain.marsgpl.com](https://sandbox-cbi.pages.dev)
+<https://sandbox-cbi.pages.dev>
 
 ## DEV
 
